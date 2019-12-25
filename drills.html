@@ -41,7 +41,7 @@ blanking in technical interviews.
             console.log(quintuples);
         }
     </script> -->
-    <script>
+    <!-- <script>
         // Your instructions: 
         /*
 
@@ -55,6 +55,26 @@ blanking in technical interviews.
         }
         square(4);
         console.log(square(4));
+    </script> -->
+
+    <script>
+        // Your instructions: 
+        /*
+            given scores = [90, 87, 58, 89, 95]; find the average. 
+            
+        */
+        let scores = [90, 87, 58, 89, 95];
+
+        function findAvg() {
+
+            for (i = 0; i < scores.length; i++) {
+                let sum = (scores[i] * scores.length);
+                let avg = sum / scores.length;
+                return avg;
+            }
+        }
+        findAvg(scores);
+        console.log(findAvg(scores));
     </script>
 </body>
 
