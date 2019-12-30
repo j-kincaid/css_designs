@@ -49,7 +49,9 @@
                 }
                 console.log(`${ingredientAmount} ${unit} ${name}`);
             };
-            // unit and ingredientAmount are not visible to the outer function.
+            // unit and ingredientAmount are not visible to the outer function
+            // They call it lexical scoping.
+
             ingredient(1, "can", "chickpeas");
             ingredient(0.25, "cup", "tahini");
             ingredient(0.25, "cup", "lemon juice");
@@ -57,6 +59,18 @@
             ingredient(2, "tablespoon", "olive oil");
             ingredient(0.5, "teaspoon", "cumin");
         };
+
+        // Function binding
+        // usually it's a name for a specific piece of the program, that is defined 
+        // once and never changed. The book gives this example (safeMode is not defined):
+
+        let launchMissiles = function() {
+            missileSystem.launch("now");
+        };
+        if (safeMode) {
+            launchMissiles = function() { /* do nothing */ };
+        }
+        // MDN says The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
     </script>
 </body>
 
