@@ -99,6 +99,47 @@
         let twice = multiplier(2);
         console.log(twice(5));
         // → 10
+
+        // Recursion = You knew we were getting to this.
+        // A function that calls itself is recursive. 
+        function pow(base, exponent) {
+            if (exponent == 0) {
+                return 1;
+            } else {
+                return base * pow(base, exponent - 1);
+            }
+        }
+
+        console.log(pow(2, 3));
+        // → 8
+
+        // Running through this function is more mathematical but less efficient than looping multiple times, so programmers usually opt for what's easier to understand. 
+
+        // A lot of times, problems that require branching can be best solved with recursion. 
+
+        //         Consider this puzzle: by starting from the number 1 and repeatedly either adding 5 or multiplying by 3, an infinite set of numbers can be produced. How would you write a function that, given a number, tries to find a sequence of such additions and multiplications that produces that number?
+
+        // For example, the number 13 could be reached by first multiplying by 3 and then adding 5 twice, whereas the number 15 cannot be reached at all.
+
+        // Here is a recursive solution:
+
+        function findSolution(target) {
+            function find(current, history) { // find() takes the current number and 
+                // a string that tracks how we reached it. It returns null if it doesn't find a solution. Otherwise, it shows how to get the number.
+                if (current == target) {
+                    return history; // the current number is the target
+                } else if (current > target) {
+                    return null; // there's no point in adding to the number
+                } else {
+                    return find(current + 5, `(${history} + 5)`) ||
+                        find(current * 3, `(${history} * 3)`);
+                }
+            }
+            return find(1, "1");
+        }
+
+        console.log(findSolution(24));
+        // → (((1 * 3) + 5) * 3)
     </script>
 </body>
 
