@@ -64,13 +64,41 @@
         // usually it's a name for a specific piece of the program, that is defined 
         // once and never changed. The book gives this example (safeMode is not defined):
 
-        let launchMissiles = function() {
-            missileSystem.launch("now");
-        };
-        if (safeMode) {
-            launchMissiles = function() { /* do nothing */ };
-        }
+        // let launchMissiles = function() {
+        //     missileSystem.launch("now");
+        // };
+        // if (safeMode) {
+        //     launchMissiles = function() { /* do nothing */ };
+        // }
         // MDN says The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
+
+
+        // Closure = Being able to reference a specific instance of a local binding in an enclosed scope.
+
+        // What happens to local bindings when the function call that created them is no longer active?
+
+        // The following code shows an example of this. It defines a function, wrapValue, that creates a local binding. It then returns a function that accesses and returns this local binding.
+
+        function wrapValue(n) {
+            let local = n; // You don't need to say this because n is already local
+            return () => local;
+        }
+
+        let wrap1 = wrapValue(1);
+        let wrap2 = wrapValue(2);
+        console.log(wrap1());
+        // → 1
+        console.log(wrap2());
+        // → 2
+
+        // This one multiplies by an arbitrary amount:
+        function multiplier(factor) {
+            return number => number * factor;
+        }
+
+        let twice = multiplier(2);
+        console.log(twice(5));
+        // → 10
     </script>
 </body>
 
