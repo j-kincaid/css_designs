@@ -1,0 +1,98 @@
+<body style="background-color: rgb(231, 231, 0);">	
+    <!--  #red {position: relative;} [0]-->
+    <div id="red" style="background-color: rgb(118, 0, 0); padding: 2.70757em 10.6573em 0.237678em 23.2684em; border-radius: 7.31751em 0.913036em 6.42511em 18.2834em;"></div>
+    
+    <!--  #green {display: inherit;} [1]-->
+    
+    <div id="green" style="background-color: rgb(0, 193, 0); padding: 3.0746em 17.192em 16.2767em 15.7495em; border-radius: 0.359698em 2.90925em 19.0059em 0.74731em;"></div>
+    
+    <!--  #blue {position: absolute;} [2]-->
+    <div id="blue" style="background-color: rgb(0, 0, 189); padding: 11.1161em 17.4162em 5.63236em 8.59043em; border-radius: 13.5264em 9.47878em 11.7642em 23.4418em;"></div>
+    
+    <!--  #yellow {float: left;} [3]-->
+    <div id="gold" style="background-color: rgb(231, 231, 0); padding: 14.1678em 9.37712em 2.38736em 22.9728em; border-radius: 4.60738em 3.86482em 0.659578em 14.1846em;"></div>
+    
+    <!--  #light {float: right;} [4]-->
+    <div id="orange" style="background-color: rgb(231, 129, 0); padding: 0.0783006em 15.2283em 15.6294em 8.08616em; border-radius: 12.1758em 2.84557em 16.3714em 19.6524em;"></div>
+    
+    <!--  #mauve {clear: left;} [5]-->
+    <div id="mauve" style="background-color: rgb(231, 129, 202); padding: 0.699459em 8.41877em 9.94859em 20.8711em; border-radius: 1.28084em 1.62274em 15.5907em 6.92924em;"></div>
+    
+    <!--  #pastel {float: right;} [6]-->
+    <div id="pastel" style="background-color: rgb(172, 255, 255); padding: 0.596146em 13.0379em 3.77645em 7.67923em; border-radius: 10.7433em 1.12368em 1.7414em 12.2377em;"></div>
+        <script>
+            var divs= document.getElementsByTagName("div");
+    
+            var yellow =   Math.round(127*Math.random()+127);
+    
+            var light =   Math.round(100*Math.random()+90);
+    
+            var other = Math.round(100*Math.random()+200);
+            // yellow div
+                //rgb(JavaScript,255,255)
+    
+    
+            // It would be interesting to randomize the array number/order of container div. 
+    
+                // body.style.backgroundColor = 'rgb('+Math.round(255*Math.random()+100)+','+Math.round(255*Math.random()+100)+','+Math.round(255*Math.random()+100)+')';
+    
+                //I don't remember why we added +100 for the pastel colors. 
+            // The body.style.backgroundColor should be completely random. 
+    
+                divs[0].style.backgroundColor = 'rgb('+Math.round(255*Math.random()+100)+ ',0,0)';  // red
+                // li[0].style.backgroundColor = 'rgb('+Math.round(255*Math.random()+100)+ ',0,0)';   // li red
+                //rgb(JavaScript,255,255)
+                divs[1].style.backgroundColor = 'rgb(0,'+ Math.round(255*Math.random())+',0)';  // green
+    
+                divs[2].style.backgroundColor = 'rgb(0,0,'+ Math.round(255*Math.random())+')';  // blue
+    
+                divs[3].style.backgroundColor = 'rgb('+ yellow + ','+ yellow +',0)';  // gold
+                divs[4].style.backgroundColor = 'rgb('+ yellow + ','+ light +',0)';  // orange
+                divs[5].style.backgroundColor = 'rgb('+ yellow + ','+ light + ','+ other +')';  // mauve
+                divs[6].style.backgroundColor = 'rgb('+Math.round(255*Math.random()+100)+','+Math.round(255*Math.random()+100)+','+Math.round(255*Math.random()+100)+')';  // pastel 
+            //}
+    
+                document.body.style.backgroundColor = divs[Math.round( Math.random() * (5 - 1))].style.backgroundColor;
+                //divs[0].style.backgroundColor = divs[Math.round( Math.random() * (5 - 1))].style.backgroundColor;
+                //divs[1].style.backgroundColor = divs[Math.round( Math.random() * (5 - 1))].style.backgroundColor;
+                //divs[2].style.backgroundColor = divs[Math.round( Math.random() * (5 - 1))].style.backgroundColor;
+                //divs[3].style.backgroundColor = divs[Math.round( Math.random() * (5 - 1))].style.backgroundColor;
+                //divs[4].style.backgroundColor = divs[Math.round( Math.random() * (5 - 1))].style.backgroundColor;
+    
+    
+    
+            // Randomize the padding values to change the sizes.
+    
+    
+                for (i=0;i<(divs.length); i++) {
+                    divs[i].style.padding = (Math.random()*15)+'em '+(Math.random()*20)+'em '+(Math.random()*25)+'em '+(Math.random()*30)+'em ';
+                }
+    
+    
+            // Randomize the id of the container div
+            //var contain = document.getElementById(['red','green','blue','yellow','pastel']) 
+    
+    
+            //	for (i=0;i<(contain.length); i++) {
+            //		contain[i].style.padding = (Math.random()*15)+'em '+(Math.random()*10)+'em '+(Math.random()*20)+'em '+(Math.random()*25)+'em ';
+            //	}
+    
+            // I would want to keep 
+            // #blue { position: absolute; }
+            // #red { position: relative; }
+            // #yellow { float: left; }
+            // #pastel { float: right; }
+            // 
+    
+    
+            // Randomize border-radius values also to change the shapes. 
+    
+                for (i=0;i<(divs.length); i++) {
+                    divs[i].style.borderRadius = (Math.random()*15)+'em '+(Math.random()*10)+'em '+(Math.random()*20)+'em '+(Math.random()*25)+'em ';
+                }
+    
+        </script>
+    
+    </body>
+
+<div id="red" style="background-color: rgb(118, 0, 0); padding: 2.70757em 10.6573em 0.237678em 23.2684em; border-radius: 7.31751em 0.913036em 6.42511em 18.2834em;"></div>
