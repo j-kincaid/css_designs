@@ -1,4 +1,3 @@
-# practice_drills
+# css designs
 
-Review of JavaScript tutorial content. 
-Exercises to continually keep my mind in the code. 
+Abstract designs created with css and used for inspiration for artworks in other media.
